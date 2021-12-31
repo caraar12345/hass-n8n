@@ -17,6 +17,8 @@ export N8N_BASIC_AUTH_ACTIVE="$(jq --raw-output '.auth // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_USER="$(jq --raw-output '.auth_username // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_PASSWORD="$(jq --raw-output '.auth_password // empty' $CONFIG_PATH)"
 export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
+export WEBHOOK_URL="$(jq --raw-output '.webhook_url // empty' $CONFIG_PATH)"
+export N8N_METRICS="$(jq --raw-output '.prometheus_metrics // empty' $CONFIG_PATH)"
 export N8N_PROTOCOL="$(jq --raw-output '.protocol // empty' $CONFIG_PATH)"
 export N8N_SSL_CERT="/ssl/$(jq --raw-output '.certfile // empty' $CONFIG_PATH)"
 export N8N_SSL_KEY="/ssl/$(jq --raw-output '.keyfile // empty' $CONFIG_PATH)"
@@ -27,7 +29,6 @@ if [ -z "${N8N_BASIC_AUTH_USER}" ] || [ -z "${N8N_BASIC_AUTH_ACTIVE}" ]; then
     unset N8N_BASIC_AUTH_USER
     unset N8N_BASIC_AUTH_PASSWORD
 fi
-
 
 ###########
 ## MAIN  ##
