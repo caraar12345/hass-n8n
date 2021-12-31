@@ -1,6 +1,6 @@
 {
   "name": "Home Assistant - n8n",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "slug": "hass-n8n",
   "description": "hass-n8n forked from Rbillon59 by caraar12345",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
